@@ -14,9 +14,11 @@ dotenv.load_dotenv()
 bot = Bot(token=os.getenv('BOT_TOKEN'))
 dp = Dispatcher(bot, storage=MemoryStorage())
 
+
 class States(StatesGroup):
     start = State()
     waiting = State()
+
 
 @dp.message_handler(commands=['download'])
 async def download(message: types.Message):
