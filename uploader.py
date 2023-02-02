@@ -1,10 +1,10 @@
 import os
 from pyrogram import Client
 from downloader import download_video
+from config import api_hash, api_id
 
-api_id = os.getenv('API_ID')
-api_hash = os.getenv('API_HASH')
-
+print(api_hash)
+print(api_id)
 app = Client("my_account", api_id=api_id, api_hash=api_hash)
 
 

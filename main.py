@@ -1,4 +1,3 @@
-import os
 import sys
 
 from aiogram import Bot, Dispatcher, types
@@ -9,11 +8,8 @@ from aiogram.utils import executor
 
 from uploader import upload_video, register
 
-import dotenv
-
-dotenv.load_dotenv()
-
-bot = Bot(token=os.getenv('BOT_TOKEN'))
+from config import token
+bot = Bot(token=token)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 
