@@ -1,4 +1,6 @@
 import os
+import sys
+
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -45,5 +47,11 @@ async def help(message: types.Message):
 #     await message.answer_video(message.text.split(' ')[1].strip())
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'auth':
+            register()
+        else:
+            sys.exit()
+    else:
 
-    executor.start_polling(dp, skip_updates=True, on_startup=register)
+        executor.start_polling(dp, skip_updates=True, on_startup=register)
