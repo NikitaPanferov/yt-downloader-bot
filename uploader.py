@@ -9,7 +9,7 @@ app = Client("my_account", api_id=api_id, api_hash=api_hash)
 
 
 def register():
-    app.run(lambda: print('ok'))
+    app.run()
 
 
 async def upload_video(url, mes):
