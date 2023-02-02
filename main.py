@@ -50,4 +50,4 @@ if __name__ == '__main__':
             sys.exit()
     else:
 
-        executor.start_polling(dp, skip_updates=True, on_startup=register)
+        executor.start_polling(dp, skip_updates=True)
