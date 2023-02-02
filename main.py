@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
 from aiogram.utils import executor
 
-from uploader import upload_video
+from uploader import upload_video, register
 
 import dotenv
 
@@ -44,5 +44,6 @@ async def help(message: types.Message):
 #     await message.answer(message.text.split(' ')[1].strip())
 #     await message.answer_video(message.text.split(' ')[1].strip())
 
+if __name__ == '__main__':
 
-executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True, on_startup=register)
