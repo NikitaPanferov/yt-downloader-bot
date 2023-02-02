@@ -8,7 +8,7 @@ api_hash = os.getenv('API_HASH')
 app = Client("my_account", api_id=api_id, api_hash=api_hash)
 
 
-def register():
+def register(dp):
     app.run(lambda: print('ok'))
 
 
