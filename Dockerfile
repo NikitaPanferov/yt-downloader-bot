@@ -4,7 +4,7 @@ RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
-RUN apt install ffmpeg
+RUN apt-get install -y ffmpeg
 COPY . /app
 WORKDIR /app
 
